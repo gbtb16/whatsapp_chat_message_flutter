@@ -34,10 +34,12 @@ class Message {
   }
 
   Message copyWith({
+    String? id,
     String? text,
     DateTime? sentAt,
   }) {
-    return copyWith(
+    return Message(
+      id: id ?? this.id,
       text: text ?? this.text,
       sentAt: sentAt ?? this.sentAt,
     );
