@@ -26,7 +26,7 @@ class MessagesController extends ChangeNotifier {
     final existingMessage = _messages.firstWhereOrNull((msg) => msg == message);
 
     if (existingMessage == null) {
-      throw Exception('It\'s not possible remove a message which not exist in messages of controller.');
+      throw Exception('It\'s not possible remove a message which not exist in [MessagesController].');
     }
 
     _messages.remove(existingMessage);
