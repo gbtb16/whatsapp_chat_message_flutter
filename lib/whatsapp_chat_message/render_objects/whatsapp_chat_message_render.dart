@@ -113,7 +113,7 @@ class WhatsappChatMessageRenderObject extends RenderBox {
     markNeedsSemanticsUpdate();
   }
 
-  // Valores salvos de [perfomLayout] usados no [paint]
+  // [perfomLayout] values which will be used by [paint]
   late bool _sentAtFitsOnLastLine;
   late double _messageLineHeight;
   late double _lastMessageLineWidth;

@@ -18,7 +18,7 @@ class _MainAppState extends State<MainApp> {
   static TextStyle get _textStyle => const TextStyle(color: Colors.white);
   static TextStyle get _sentAtTextStyle => TextStyle(color: Colors.blueGrey[200]!);
 
-  final TextEditingController _controller = TextEditingController();
+  final TextEditingController _inputController = TextEditingController();
   final MessagesController _messagesController = MessagesController();
 
   @override
@@ -34,7 +34,7 @@ class _MainAppState extends State<MainApp> {
 
   @override
   void dispose() {
-    _controller.dispose();
+    _inputController.dispose();
     _messagesController.dispose();
 
     super.dispose();
@@ -93,16 +93,16 @@ class _MainAppState extends State<MainApp> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.symmetric(vertical: 25),
                 child: TextField(
-                  controller: _controller,
+                  controller: _inputController,
                   onSubmitted: (value) {
                     _messagesController.addMessage(
                       Message(
-                        text: _controller.text,
+                        text: _inputController.text,
                         sentAt: DateTime.now(),
                       ),
                     );
 
-                    _controller.clear();
+                    _inputController.clear();
                   },
                 ),
               ),
